@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trunk-Based Development</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        line-height: 1.6;
+        margin: 2rem;
+        color: #222;
+        background: #fff;
+      }
+      header h1 {
+        margin: 0 0 0.25rem 0;
+      }
+      .meta {
+        color: #555;
+        margin-bottom: 1rem;
+      }
+      figure {
+        margin: 1rem 0;
+      }
+      img.diagram {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+      }
+      pre {
+        background: #f6f8fa;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        overflow: auto;
+      }
+      .note {
+        background: #eef9ff;
+        border-left: 4px solid #79b8ff;
+        padding: 0.5rem 1rem;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Trunk-Based Development</h1>
+      <p class="meta">
+        A short explanation and example of how Trunk-Based Development is used
+        with Git.
+      </p>
+    </header>
+
+    <section>
+      <h2>What is Trunk-Based Development?</h2>
+      <p>
+        Trunk-Based Development is a source control workflow where developers
+        collaborate on small, frequent changes directly against a single shared
+        branch — commonly called the trunk, main, or master. The trunk remains
+        the integration point for all changes and short-lived feature branches
+        are merged quickly.
+      </p>
+    </section>
+
+    <section>
+      <h2>Example workflow</h2>
+      <p>Example steps when using Git with Trunk-Based Development:</p>
+      <ol>
+        <li>Create a short-lived branch from main</li>
+        <li>Implement a small change and write tests.</li>
+        <li>
+          Run CI against the branch or trunk; when green, merge quickly into
+          main.
+        </li>
+        <li>Deploy small, frequent releases from main (often continuously).</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Visual branching example</h2>
+      <p>
+        The diagram below illustrates a typical trunk-based flow: short-lived
+        feature branches merge back into main frequently.
+      </p>
+      <figure>
+        <img
+          class="diagram"
+          src="trunk-based-development.png"
+          alt="Trunk-Based Development branching diagram"
+        />
+        <figcaption>
+          Figure 1 — Example trunk-based branching (short-lived branches merge
+          into trunk/main).
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Why teams use Trunk-Based Development</h2>
+      <ul>
+        <li>Reduces long-lived merge conflicts.</li>
+        <li>Encourages continuous integration and frequent releases.</li>
+        <li>
+          Works well with feature flags and automated testing to keep trunk
+          deployable.
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
