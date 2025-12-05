@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DVOP400 - Git Workflow Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .workflows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .workflow-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .workflow-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .workflow-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .workflow-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .workflow-card .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s ease;
+        }
+
+        .workflow-card .btn:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .workflows-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Git Workflow Guides</h1>
+            <p>DVOP400 - SDLC Automation: Plan & Code Assignment</p>
+        </header>
+
+        <div class="workflows-grid">
+            <a href="centralized-workflow.html" class="workflow-card">
+                <h3>Centralized Workflow</h3>
+                <p>Learn about the simplest Git workflow where all changes are committed to a single central repository. Ideal for small teams and beginners.</p>
+                <span class="btn">View Guide →</span>
+            </a>
+
+            <a href="feature-branch-workflow.html" class="workflow-card">
+                <h3>Feature Branch Workflow</h3>
+                <p>Discover how to use feature branches to develop new features in isolation. Perfect for collaborative development with multiple feature streams.</p>
+                <span class="btn">View Guide →</span>
+            </a>
+
+            <a href="gitflow-workflow.html" class="workflow-card">
+                <h3>Gitflow Workflow</h3>
+                <p>Explore a robust branching model with dedicated branches for features, releases, and hotfixes. Great for managing multiple versions.</p>
+                <span class="btn">View Guide →</span>
+            </a>
+
+            <a href="forking-workflow.html" class="workflow-card">
+                <h3>Forking Workflow</h3>
+                <p>Understand how to work with forks for open-source contributions. Enables distributed development with proper access control.</p>
+                <span class="btn">View Guide →</span>
+            </a>
+
+            <a href="trunk-based-development.html" class="workflow-card">
+                <h3>Trunk-Based Development</h3>
+                <p>Master continuous integration practices with short-lived branches. Enables rapid development and frequent deployments.</p>
+                <span class="btn">View Guide →</span>
+            </a>
+
+            <a href="github-workflow.html" class="workflow-card">
+                <h3>GitHub Workflow</h3>
+                <p>Learn GitHub's simplified workflow using pull requests. Best practices for code review and collaboration on GitHub.</p>
+                <span class="btn">View Guide →</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 DVOP400 Assignment - Git Workflow Guides</p>
+        </footer>
+    </div>
+</body>
+</html>
