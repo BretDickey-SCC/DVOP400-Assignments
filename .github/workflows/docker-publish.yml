@@ -3,7 +3,7 @@ name: Build and publish Docker image
 on:
   push:
     branches:
-      - main        # 🔁 Change this to the branch you want to trigger on
+      - feature/final-assignment      # 🔁 Change this to the branch you want to trigger on
 
 jobs:
   build-and-push:
