@@ -33,5 +33,5 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            lmcalister/getting-started:latest
-            lmcalister/getting-started:${{ github.sha }}
+            lmcalister/devop400final:latest
+            lmcalister/devop400final:${{ github.sha }}
