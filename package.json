@@ -1,0 +1,12 @@
+{
+  "name": "git-workflows",
+  "version": "1.0.0",
+  "description": "Static Git workflow pages served with Node",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
