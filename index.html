@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Git Workflows - Home</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/site.css" />
+    <script src="js/theme-preload.js"></script>
+  </head>
+  <body>
+    <!-- Bootstrap navbar (bg-primary) -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Workflows</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainNav"
+          aria-controls="mainNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="centralized-workflow.html"
+                >Centralized Workflow</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feature-branch-workflow.html"
+                >Feature Branch Workflow</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="forking-workflow.html"
+                >Forking Workflow</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="github-workflow.html"
+                >GitHub Workflow</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gitflow-workflow.html"
+                >Gitflow Workflow</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="trunk-based-development.html"
+                >Trunk-Based Development</a
+              >
+            </li>
+          </ul>
+          <button
+            id="theme-toggle"
+            class="btn btn-sm btn-light ms-2"
+            aria-pressed="false"
+            title="Toggle theme"
+          >
+            🌙 <span id="theme-label">Dark</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container" style="padding-top: 2rem">
+      <header>
+        <h2>Choose a Workflow</h2>
+        <p class="meta">
+          Select a Git workflow below to explore its branching strategy, use
+          cases, and examples.
+        </p>
+      </header>
+
+      <div class="row g-4">
+        <!-- Centralized Workflow -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card workflow-card">
+            <div class="card-body">
+              <h5 class="card-title">Centralized Workflow</h5>
+              <p class="card-text">
+                A simple approach where all changes are made on a single central
+                branch. Best for small teams and projects.
+              </p>
+              <a
+                href="centralized-workflow.html"
+                class="btn btn-workflow btn-sm"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Branch Workflow -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card workflow-card">
+            <div class="card-body">
+              <h5 class="card-title">Feature Branch Workflow</h5>
+              <p class="card-text">
+                Create isolated branches for each feature. Perfect for
+                collaboration and code review before merging to main.
+              </p>
+              <a
+                href="feature-branch-workflow.html"
+                class="btn btn-workflow btn-sm"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Forking Workflow -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card workflow-card">
+            <div class="card-body">
+              <h5 class="card-title">Forking Workflow</h5>
+              <p class="card-text">
+                Each contributor forks the repo and submits pull requests.
+                Common in open-source projects.
+              </p>
+              <a href="forking-workflow.html" class="btn btn-workflow btn-sm"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Workflow -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card workflow-card">
+            <div class="card-body">
+              <h5 class="card-title">GitHub Workflow</h5>
+              <p class="card-text">
+                A lightweight workflow using pull requests. Continuously
+                deployable and ideal for cloud-based development.
+              </p>
+              <a href="github-workflow.html" class="btn btn-workflow btn-sm"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Gitflow Workflow -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card workflow-card">
+            <div class="card-body">
+              <h5 class="card-title">Gitflow Workflow</h5>
+              <p class="card-text">
+                A structured branching model with dedicated branches for
+                features, releases, and hotfixes. Ideal for planned releases.
+              </p>
+              <a href="gitflow-workflow.html" class="btn btn-workflow btn-sm"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Trunk-Based Development -->
+        <div class="col-md-6 col-lg-4">
+          <div class="card workflow-card">
+            <div class="card-body">
+              <h5 class="card-title">Trunk-Based Development</h5>
+              <p class="card-text">
+                Developers collaborate on short-lived branches that merge into
+                the trunk frequently. Supports continuous integration.
+              </p>
+              <a
+                href="trunk-based-development.html"
+                class="btn btn-workflow btn-sm"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer
+        style="
+          margin-top: 3rem;
+          padding-top: 2rem;
+          border-top: 1px solid #ddd;
+          color: #666;
+          text-align: center;
+          font-size: 0.9rem;
+        "
+      >
+        <p>Git Workflows - Educational Resource for DVOP400</p>
+      </footer>
+    </div>
+
+    <script src="js/theme.js"></script>
+    <!-- Bootstrap JS bundle (for navbar toggling) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

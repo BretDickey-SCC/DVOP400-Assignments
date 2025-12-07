@@ -1,0 +1,454 @@
+/* Shared base styles */
+:root {
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap");
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+/* Forking workflow theme variables and page styles (supports light/dark via data-theme on <html>) */
+:root {
+  --site-max-width: 1200px;
+  --brand: #0d6efd;
+  --muted: #6c757d;
+  --page-bg: #e9eef3;
+  --page-bg-start: #f3f6f9;
+  --container-bg: #f8fafc;
+  --max-width: 900px;
+  --text: #1f2937;
+  --muted-2: #55606a;
+  --pre-bg: linear-gradient(180deg, #eef6fb, #e6eef7);
+  --pre-color: #05242e;
+  --hr-color: rgba(31, 41, 55, 0.18);
+  --container-border: rgba(2, 6, 23, 0.06);
+  --toc-bg: #f6f9fc;
+  --node-bg: #ffffff;
+  --node-border: rgba(2, 6, 23, 0.06);
+}
+
+[data-theme="dark"] {
+  /* Keep brand color consistent across themes */
+  --brand: #0d6efd;
+  --muted: #94a3b8;
+  --page-bg: #071028;
+  --page-bg-start: #030617;
+  --container-bg: linear-gradient(
+    180deg,
+    rgba(10, 18, 30, 0.96),
+    rgba(6, 12, 22, 0.95)
+  );
+  --max-width: 900px;
+  --text: #e6eef8;
+  --muted-2: #9aa6b2;
+  --pre-bg: linear-gradient(180deg, #00121a, #051421);
+  --pre-color: #d9eefc;
+  --hr-color: rgba(255, 255, 255, 0.08);
+  --container-border: rgba(255, 255, 255, 0.03);
+  --toc-bg: rgba(255, 255, 255, 0.02);
+  --node-bg: rgba(255, 255, 255, 0.03);
+  --node-border: rgba(255, 255, 255, 0.03);
+}
+
+body.page-fork {
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  font-size: 1rem;
+  background: linear-gradient(180deg, var(--page-bg-start), var(--page-bg) 40%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+.page-fork .doc-container {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  background: var(--container-bg);
+  padding: 2.25rem 2.5rem;
+  box-shadow: 0 10px 40px rgba(2, 6, 23, 0.06);
+  border-radius: 12px;
+  border: 1px solid var(--container-border);
+  margin-top: 2rem;
+}
+
+.page-fork header .title {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  font-size: 1.75rem;
+  color: var(--text);
+}
+.page-fork header .subtitle {
+  color: var(--muted-2);
+  margin-top: 0.25rem;
+}
+.page-fork .meta {
+  color: var(--muted-2);
+}
+.page-fork .italic-text {
+  font-style: italic;
+  font-size: smaller;
+}
+.page-fork hr {
+  border: 0;
+  border-top: 1px solid var(--hr-color);
+  height: 0;
+  margin: 1rem 0 1.25rem;
+  opacity: 1;
+}
+.page-fork .toc {
+  background: var(--toc-bg);
+  border-left: 3px solid var(--brand);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+.page-fork .toc a {
+  color: var(--text);
+  text-decoration: none;
+}
+.page-fork .toc a:hover {
+  text-decoration: underline;
+  color: var(--brand);
+}
+.page-fork figure {
+  margin: 0 0 1rem;
+}
+.page-fork figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: contain;
+}
+.page-fork figure figcaption {
+  margin-top: 0.35rem;
+  color: var(--muted-2);
+  font-size: 0.9rem;
+}
+.page-fork pre {
+  background: var(--pre-bg);
+  color: var(--pre-color);
+  padding: 1rem;
+  border-radius: 8px;
+  overflow: auto;
+  border: 1px solid var(--container-border);
+}
+.page-fork code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.page-fork .lead {
+  font-size: 1.05rem;
+  color: var(--text);
+}
+.page-fork .section {
+  margin-top: 1.5rem;
+}
+.page-fork footer {
+  margin-top: 2rem;
+  color: var(--muted-2);
+  font-size: 0.9rem;
+}
+.page-fork a {
+  color: var(--brand);
+}
+
+@media print {
+  .page-fork body {
+    background: white;
+    padding: 0;
+    color: black;
+  }
+  .page-fork .doc-container {
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0.75in;
+    background: white;
+    color: black;
+  }
+  .page-fork .toc {
+    background: #f7f7f7;
+    border-left-color: #222;
+  }
+  .page-fork pre {
+    background: #f5f5f5;
+    color: #111;
+  }
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--page-bg-start);
+}
+
+/* Navbar link styling: uniform font/size and spacing */
+.navbar .nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+}
+.navbar .nav-link:hover {
+  color: #ffffff;
+}
+
+/* Ensure navbar links remain visible on pages that set general link colors */
+.page-fork .navbar .nav-link,
+.page-fork .navbar .navbar-brand {
+  color: #ffffff;
+}
+.page-fork .navbar .nav-link:hover {
+  color: #ffffff;
+}
+.navbar .navbar-brand {
+  font-weight: 600;
+}
+
+/* Home page / card utilities */
+.workflow-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  height: 100%;
+}
+.workflow-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--brand);
+}
+.card-text {
+  color: #666;
+  font-size: 0.95rem;
+}
+.btn-workflow {
+  background-color: var(--brand);
+  border-color: var(--brand);
+  font-weight: 500;
+  color: white;
+}
+.btn-workflow:hover {
+  filter: brightness(0.92);
+}
+
+/* Make Bootstrap primary navbar follow the theme brand color */
+.navbar.bg-primary {
+  background-color: var(--brand) !important;
+}
+
+/* Generic main wrapper used by several pages */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Trunk-specific helpers (used when body has .page-trunk) */
+.page-trunk header h1 {
+  margin: 0 0 0.25rem 0;
+}
+.page-trunk .meta {
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.page-trunk img.diagram {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+.page-trunk pre {
+  background: #f6f8fa;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  overflow: auto;
+}
+.page-trunk .best-practices {
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+}
+.page-trunk .best-practices li {
+  margin: 0.25rem 0;
+  color: var(--text);
+  list-style: none;
+  position: relative;
+  padding-left: 1.9rem;
+}
+
+/* Replace bullet with a larger yellow star */
+.page-trunk .best-practices li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #f5c518;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+/* GitHub-specific helpers */
+.page-github main {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: 20px;
+}
+.page-github .workflow-container {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+.page-github .visual-representation {
+  background: #f5f5f5;
+  padding: 20px;
+  margin: 20px 0;
+  overflow-x: auto;
+  font-family: monospace;
+  white-space: pre;
+  border-radius: 5px;
+}
+
+/* Keep the visual representation text readable in dark mode by forcing black text */
+.page-github .visual-representation {
+  color: #000000 !important;
+}
+
+/* Feature-branch page tweaks (use theme variables so it responds to data-theme) */
+.page-feature {
+  min-height: 100vh;
+  text-align: justify;
+  background: linear-gradient(180deg, var(--page-bg-start), var(--page-bg) 40%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.page-feature .container {
+  max-width: var(--site-max-width);
+  margin: auto;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  background: transparent;
+}
+
+/* Centralized page tweaks */
+.page-centralized main {
+  max-width: var(--site-max-width);
+  margin: 40px auto;
+  padding: 24px;
+}
+
+/* Forking/gitflow and other heavy pages keep their local styles to avoid global conflicts */
+/* If you want to centralize them too, we can gradually move those blocks here and add body classes */
+
+/* GitFlow page styles scoped under body.page-gitflow to avoid global collisions */
+body.page-gitflow {
+  min-height: 100%;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  font-size: 1rem;
+  color: var(--text);
+  background: linear-gradient(180deg, var(--page-bg-start), var(--page-bg) 40%);
+}
+body.page-gitflow .container {
+  max-width: var(--site-max-width);
+  margin: 40px auto;
+  padding: 24px;
+}
+body.page-gitflow header {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+body.page-gitflow h1 {
+  margin: 0;
+  font-size: 28px;
+  color: var(--text);
+}
+body.page-gitflow h2 {
+  color: var(--text);
+}
+body.page-gitflow h3 {
+  color: var(--text);
+}
+body.page-gitflow p.lead {
+  color: var(--text);
+  margin: 6px 0 20px;
+}
+body.page-gitflow .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+body.page-gitflow .card {
+  background: var(--container-bg);
+  color: var(--text);
+  padding: 18px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+  border: 1px solid var(--container-border);
+}
+body.page-gitflow .legend {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body.page-gitflow .legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+body.page-gitflow .swatch {
+  width: 28px;
+  height: 12px;
+  border-radius: 4px;
+}
+body.page-gitflow pre {
+  background: var(--pre-bg);
+  color: var(--pre-color);
+  padding: 12px;
+  border-radius: 6px;
+  overflow: auto;
+  border: 1px solid var(--container-border);
+}
+body.page-gitflow .diagram {
+  display: block;
+  max-width: 900px;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--container-border);
+  margin: 14px auto;
+}
+body.page-gitflow .section {
+  margin-bottom: 14px;
+}
+body.page-gitflow .kbd {
+  font-family: monospace;
+  background: var(--toc-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+body.page-gitflow footer {
+  color: var(--muted-2);
+  font-size: 13px;
+  margin-top: 18px;
+}
+@media (max-width: 900px) {
+  body.page-gitflow .grid {
+    grid-template-columns: 1fr;
+  }
+}
