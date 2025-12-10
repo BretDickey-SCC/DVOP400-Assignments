@@ -57,7 +57,7 @@ jobs:
   # ------------------------------------------------------------
   build-windows:
     # Requires a Windows runner instance
-    runs-on: windows-latest 
+    runs-on: windows-2022
     needs: [build-linux] # Run after the Linux build completes
     steps:
       - name: Checkout repository
