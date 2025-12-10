@@ -1,5 +1,5 @@
 # Build the Vite application
-FROM node:20.x-alpine3.20 AS build
+FROM node:20.11.1-alpine3.20 AS build
 # Set the working directory
 WORKDIR /app
 
