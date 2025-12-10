@@ -1,0 +1,29 @@
+# Stage 1: Build the Vite application (Still Linux-based)
+FROM node:20.x-alpine3.20 AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Stage 2: Serve the application with Windows/IIS
+# Use a minimal Windows Server image
+FROM mcr.microsoft.com/windows/nanoserver:ltsc2022
+
+# Install IIS and configure it to serve the Vite 'dist' folder
+# (This is highly complex and usually requires a custom setup script)
+# Example of steps required:
+# RUN powershell Install-WindowsFeature Web-Server
+# RUN powershell ... configure IIS to point to the webroot ...
+
+# Set the working directory for the web server content
+WORKDIR /inetpub/wwwroot
+
+# Copy the static files from the Linux build stage (this is the key)
+COPY --from=build /app/dist/ .
+
+# Expose the default HTTP port for Windows/IIS
+EXPOSE 80
+
+# The CMD to start the IIS service
+# CMD [ "powershell", "Service-Management", "start", "w3svc" ]
