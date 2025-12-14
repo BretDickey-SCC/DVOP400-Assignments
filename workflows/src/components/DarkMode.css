@@ -1,0 +1,35 @@
+.dark-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.invert {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Default variables (light mode) */
+body.light {
+  --bg-color: #ffffff;
+  --text-color: #9c9c9c;
+}
+
+/* Dark mode variables */
+body.dark {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+}
+
+/* Apply the variables to the body and other elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Style for the button itself */
+.theme-toggle-button {
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: var(--text-color); /* Button background changes with theme */
+  color: var(--bg-color); /* Button text color changes with theme */
+  border-radius: 5px;
+}
